@@ -1,0 +1,37 @@
+{
+  "name": "create-micro",
+  "version": "0.0.0",
+  "description": "Project to create a new instance of service using zeit/micro",
+  "bin": {
+    "create-micro": "./bin/index.js"
+  },
+  "files": [
+    "bin",
+    "templates"
+  ],
+  "scripts": {
+    "test": "xo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romuloalves/create-micro.git"
+  },
+  "keywords": [
+    "micro",
+    "zeit",
+    "microservice",
+    "http",
+    "https"
+  ],
+  "author": "romuloalves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romuloalves/create-micro/issues"
+  },
+  "homepage": "https://github.com/romuloalves/create-micro#readme",
+  "dependencies": {
+    "args": "^2.2.1",
+    "chalk": "^1.1.3",
+    "copy": "^0.3.0"
+  }
+}
