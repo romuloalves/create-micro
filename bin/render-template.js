@@ -6,7 +6,7 @@ const {sep} = require('path')
 const mustache = require('mustache')
 
 module.exports = (templateData, data) => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     const {path, files} = templateData
     if (!files || files.length === 0) {
       return resolve([])

@@ -13,8 +13,8 @@ module.exports = (data, dirname) => {
       }
       writeFileSync(distPath, data.content)
       resolve()
-    } catch (e) {
-      reject(e)
+    } catch (err) {
+      reject(err)
     }
   })
 }
