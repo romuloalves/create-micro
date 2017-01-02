@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "{{name}}",
   "version": "0.0.0",
-  "main": "./src/index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "micro -p 3000"
   },

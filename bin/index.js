@@ -1,29 +1,28 @@
 #!/usr/bin/env node
 
-// Natives
-const fs = require('fs')
-const {resolve} = require('path')
-
 // Packages
 const args = require('args')
 const chalk = require('chalk')
-const copy = require('copy')
+
+const createDir = require('./create-dir')
+const getTemplateFiles = require('./get-template-files')
+const renderTemplate = require('./render-template')
+const createFile = require('./create-file')
 
 args
   .option('name', 'Name of the basic micro application', 'micro-service')
 
 const {name} = args.parse(process.argv)
 
-const path = resolve(process.cwd(), name)
-
-const templatePath = resolve(__dirname, 'templates')
-
-fs.access('/etc/passwd', fs.constants.W_OK, err => {
-  if (err) {
-    chalk.red(`ERROR: ${err.message}`)
-    return
-  }
-  fs.mkdirSync(path);
-  copy(resolve(templatePath, 'package.json'), resolve(path, 'package.json'))
-  copy(resolve(templatePath, 'index.js'), resolve(path, 'src/index.js'))
-})
+createDir(name)
+  .then(getTemplateFiles)
+  .then(data => renderTemplate(data, {name}))
+  .then(data => {
+    const promises = data.map(templateData => createFile(templateData, name))
+    return Promise.all(promises)
+  })
+  .then(() => console.log(chalk.green('CREATED!')))
+  .catch(err => {
+    console.log(chalk.red(`ERROR`))
+    console.error(err)
+  })
