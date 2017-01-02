@@ -1,6 +1,6 @@
 {
   "name": "create-micro",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Project to create a new instance of service using zeit/micro",
   "bin": {
     "create-micro": "./bin/index.js"
@@ -27,7 +27,9 @@
   "homepage": "https://github.com/romuloalves/create-micro#readme",
   "xo": {
     "esnext": true,
-    "envs": ["node"],
+    "envs": [
+      "node"
+    ],
     "space": 2,
     "semicolon": false,
     "ignores": [
