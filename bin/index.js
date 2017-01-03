@@ -13,12 +13,15 @@ const createFile = require('./create-file')
 
 args
   .option('name', 'Name of the basic micro application', 'micro-service')
+  .option('port', 'The port of initialization when started', 3000)
 
-const {name} = args.parse(process.argv)
+const parameters = args.parse(process.argv)
+
+const {name} = parameters
 
 createDir(name)
   .then(getTemplateFiles)
-  .then(data => renderTemplate(data, {name}))
+  .then(data => renderTemplate(data, parameters))
   .then(data => {
     const promises = data.map(templateData => createFile(templateData, name))
     return Promise.all(promises)
