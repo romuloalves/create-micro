@@ -1,6 +1,6 @@
 {
   "name": "create-micro",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Project to create a new instance of service using zeit/micro",
   "bin": {
     "create-micro": "./bin/index.js"
