@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "micro -p {{port}}"
+    "start": "micro"
   },
   "dependencies": {
     "micro": "latest"

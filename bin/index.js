@@ -13,7 +13,6 @@ const createFile = require('./create-file')
 
 args
   .option('name', 'Name of the basic micro application', 'micro-service')
-  .option('port', 'The port of initialization when started', 3000)
 
 const parameters = args.parse(process.argv)
 
