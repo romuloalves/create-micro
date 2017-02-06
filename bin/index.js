@@ -1,10 +1,13 @@
 #!/usr/bin/env node
 
-// Packages
+// Natives
 const path = require('path')
+
+// Packages
 const {cd, exec} = require('shelljs')
 const args = require('args')
 const chalk = require('chalk')
+const hasYarn = require('has-yarn')
 
 const createDir = require('./create-dir')
 const getTemplateFiles = require('./get-template-files')
@@ -26,11 +29,21 @@ createDir(name)
     return Promise.all(promises)
   })
   .then(() => {
-    console.log(chalk.green('Created!\nInstalling packages...'))
+    console.log(chalk.green('Created!\n'))
     const projectPath = path.resolve(process.cwd(), name)
+
+    const hasYarnToInstall = hasYarn()
+    let commandToInstallDeps = 'npm install'
+    if (hasYarnToInstall) {
+      commandToInstallDeps = 'yarn'
+      console.log(chalk.green('\nInstalling packages usign yarn...'))
+    } else {
+      console.log(chalk.green('\nInstalling packages usign npm...'))
+    }
+
     return new Promise((resolve, reject) => {
       cd(projectPath)
-      exec('npm install', (code, stdout, stderr) => {
+      exec(commandToInstallDeps, (code, stdout, stderr) => {
         if (code === 0) {
           resolve()
         } else {
