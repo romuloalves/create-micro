@@ -1,9 +1,10 @@
 {
-  "name": "{{name}}",
+  "name": "my-micro-test",
   "version": "0.0.0",
   "main": "src/index.js",
   "scripts": {
-    "start": "micro"
+    "start": "micro",
+    "test": "ava test/**/*"
   },
   "engines": {
     "node": "^7.7.3"
@@ -16,5 +17,10 @@
   "dependencies": {
     "micro": "latest"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "request-promise": "^4.2.0",
+    "test-listen": "^1.0.2"
+  }
 }
