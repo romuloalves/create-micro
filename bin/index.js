@@ -32,7 +32,7 @@ createDir(name)
     const projectPath = path.resolve(process.cwd(), name)
     const packageManager = hasYarn() ? 'yarn' : 'npm'
 
-    console.log(chalk.green(`\nInstalling packages using ${packageManager}...`))
+    console.log(chalk.green(`Installing packages using ${packageManager}...`))
 
     return install(projectPath)
   })
