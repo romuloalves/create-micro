@@ -13,34 +13,30 @@ $ npm install -g create-micro
 
 ```
 $ create-micro -h
-Usage: create-micro [options] [command]
+  Usage: create-micro [options] [command]
 
-Commands:
+  Commands:
 
-  help  Display help
+    help  Display help
 
-Options:
+  Options:
 
-  -h, --help          Output usage information
-  -n, --name [value]  Name of the basic micro application (defaults to "micro-service")
-  -v, --version       Output the version number
+    -h, --help          Output usage information
+    -n, --name [value]  Name of the basic micro application (defaults to "micro-service")
+    -v, --version       Output the version number
 
 $ create-micro -n my-application
 Created!
-Installing packages...
-my-application@0.0.0 /Users/projects/my-application
-└─┬ micro@6.1.0
-  ├─┬ async-to-gen@1.1.4
-  │ ├── babylon@6.14.1
-  │ └─┬ magic-string@0.16.0
-  │   └── vlq@0.2.1
-  ├── isstream@0.1.2
-  ├── media-typer@0.3.0
-  ├── minimist@1.2.0
-  └─┬ raw-body@2.1.7
-    ├── bytes@2.4.0
-    ├── iconv-lite@0.4.13
-    └── unpipe@1.0.0
+
+Installing packages using yarn...
+yarn install v0.21.3
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+warning "request-promise@4.2.0" has unmet peer dependency "request@^2.34".
+warning "request-promise-core@1.1.1" has unmet peer dependency "request@^2.34".
+[4/4] Building fresh packages...
+Done in 7.98s.
 
 Done!
 ```
