@@ -1,5 +1,5 @@
 'use strict'
 
-module.exports = async function (req, res) {
+module.exports = async function () {
   return 'Hello, world'
 }
