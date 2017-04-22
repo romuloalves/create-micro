@@ -6,6 +6,7 @@ const path = require('path')
 // Packages
 const args = require('args')
 const chalk = require('chalk')
+const trash = require('trash')
 
 const createDir = require('./create-dir')
 const getTemplateFiles = require('./get-template-files')
@@ -40,4 +41,5 @@ createDir(name)
   .catch(err => {
     console.log(chalk.red(`ERROR`))
     console.error(err)
+    trash(name)
   })
