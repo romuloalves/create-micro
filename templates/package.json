@@ -13,11 +13,6 @@
   "engines": {
     "node": "^7.7.3"
   },
-  "now": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
   "dependencies": {
     "micro": "latest"
   },
