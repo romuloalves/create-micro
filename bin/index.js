@@ -16,14 +16,26 @@ const {hasYarn, install} = require('./install-deps')
 
 args
   .option('name', 'Name of the basic micro application', 'micro-service')
+  .option('dockerfile', 'Include Dockerfile in the project using node-alpine', false)
 
 const parameters = args.parse(process.argv)
 
 const {name} = parameters
 
+const templateFileOptions = {
+  Dockerfile: parameters.dockerfile
+}
+
 createDir(name)
-  .then(getTemplateFiles)
-  .then(data => renderTemplate(data, parameters))
+  .then(() => {
+    const data = getTemplateFiles(templateFileOptions)
+    console.log(data)
+    return data
+  })
+  .then(data => {
+    console.log(data)
+    return renderTemplate(data, parameters)
+  })
   .then(data => {
     const promises = data.map(templateData => createFile(templateData, name))
     return Promise.all(promises)
