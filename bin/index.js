@@ -27,15 +27,8 @@ const templateFileOptions = {
 }
 
 createDir(name)
-  .then(() => {
-    const data = getTemplateFiles(templateFileOptions)
-    console.log(data)
-    return data
-  })
-  .then(data => {
-    console.log(data)
-    return renderTemplate(data, parameters)
-  })
+  .then(() => getTemplateFiles(templateFileOptions))
+  .then(data => renderTemplate(data, parameters))
   .then(data => {
     const promises = data.map(templateData => createFile(templateData, name))
     return Promise.all(promises)
