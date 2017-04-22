@@ -16,7 +16,7 @@ const {hasYarn, install} = require('./install-deps')
 
 args
   .option('name', 'Name of the basic micro application', 'micro-service')
-  .option('dockerfile', 'Include Dockerfile in the project using node-alpine', false)
+  .option('dockerfile', 'Include Dockerfile in the project using mhart/alpine-node', false)
 
 const parameters = args.parse(process.argv)
 
