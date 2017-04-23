@@ -1,7 +1,7 @@
 // Packages
 const {cd, exec, which} = require('shelljs')
 
-const hasYarn = () => !!which('yarn')
+const hasYarn = () => Boolean(which('yarn'))
 
 module.exports = {
   hasYarn,
