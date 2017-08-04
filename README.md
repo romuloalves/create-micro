@@ -65,14 +65,13 @@ To create a Dockerfile in your service, use the flag `--dockerfile`.
   - test
     - index.js
   - .gitignore
-  - yarn.lock
   - package.json
   - Dockerfile (if flag --dockerfile was used)
 ```
 
 ### Packages
 
-By default, is used the last version of [micro](https://github.com/zeit/micro).
+By default, is used the last version of [micro](https://github.com/zeit/micro) and [micro-dev](https://github.com/zeit/micro-dev).
 
 ### Dockerfile
 
@@ -88,9 +87,15 @@ Just to lint:
 
 `$ npm run lint`
 
-To start the server:
+To start the local server:
+
+`$ npm run dev`
+
+To start the production server:
 
 `$ npm start`
+
+*Don't forget to set the NODE_ENV environment variable to `production`.*
 
 
 ## License

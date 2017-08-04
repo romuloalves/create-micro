@@ -3,26 +3,28 @@
   "version": "0.0.0",
   "main": "src/index.js",
   "scripts": {
+    "dev": "micro-dev",
     "start": "micro",
     "lint": "xo",
     "test": "npm run lint && ava"
   },
+  "env": {
+    "NODE_ENV": "production"
+  },
   "xo": {
     "extends": "prettier"
-  },
-  "engines": {
-    "node": "^7.7.3"
   },
   "dependencies": {
     "micro": "latest"
   },
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.19.1",
-    "eslint-config-prettier": "^1.7.0",
-    "prettier": "^1.2.2",
-    "request-promise": "^4.2.0",
-    "test-listen": "^1.0.2",
-    "xo": "^0.18.1"
+    "ava": "0.21.0",
+    "eslint-config-prettier": "2.3.0",
+    "prettier": "1.5.3",
+    "request-promise": "4.2.1",
+    "test-listen": "1.0.2",
+    "xo": "0.18.2",
+    "micro-dev": "latest"
   }
 }
