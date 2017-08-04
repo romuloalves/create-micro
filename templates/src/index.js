@@ -1,5 +1,3 @@
-'use strict'
-
-module.exports = async function () {
+module.exports = async () => {
   return 'Hello, world'
 }
