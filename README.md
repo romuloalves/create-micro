@@ -95,7 +95,7 @@ To start the production server:
 
 `$ npm start`
 
-*Don't forget to include the NODE_ENV environment variable to `production`.*
+*Don't forget to set the NODE_ENV environment variable to `production`.*
 
 
 ## License
