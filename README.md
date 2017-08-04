@@ -65,9 +65,7 @@ To create a Dockerfile in your service, use the flag `--dockerfile`.
   - test
     - index.js
   - .gitignore
-  - yarn.lock
   - package.json
-  - package-lock.json
   - Dockerfile (if flag --dockerfile was used)
 ```
 
