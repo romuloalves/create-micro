@@ -11,10 +11,11 @@ module.exports = (data, dirname) => {
       if (!existsSync(dir)) {
         mkdirSync(dir)
       }
+
       writeFileSync(distPath.replace('.tmpl', ''), data.content)
       resolve()
-    } catch (err) {
-      reject(err)
+    } catch (error) {
+      reject(error)
     }
   })
 }

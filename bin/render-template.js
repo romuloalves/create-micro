@@ -11,6 +11,7 @@ module.exports = (templateData, data) => {
     if (!files || files.length === 0) {
       return resolve([])
     }
+
     const renderedFiles = files.map(file => {
       const content = fs.readFileSync(file, {encoding: 'utf-8'})
       const rendered = mustache.render(content, data)

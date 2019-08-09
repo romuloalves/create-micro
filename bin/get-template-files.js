@@ -13,12 +13,14 @@ module.exports = options => {
     if (!basenameFile.endsWith('.tmpl')) {
       return false
     }
+
     for (const key in options) {
       if (basenameFile.startsWith(key)) {
         return !options[key]
       }
     }
   }
+
   return new Promise((resolve, reject) => {
     recursive(templatePath, [ignoreFiles], (err, files) => {
       if (err) {

@@ -43,8 +43,8 @@ createDir(name)
     return install(projectPath)
   })
   .then(() => console.log(chalk.green('\nDone!')))
-  .catch(err => {
-    console.log(chalk.red(`ERROR`))
-    console.error(err)
+  .catch(error => {
+    console.log(chalk.red('ERROR'))
+    console.error(error)
     trash(name)
   })
