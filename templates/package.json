@@ -19,12 +19,13 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "ava": "0.21.0",
-    "eslint-config-prettier": "2.3.0",
-    "prettier": "1.5.3",
-    "request-promise": "4.2.1",
-    "test-listen": "1.0.2",
-    "xo": "0.18.2",
-    "micro-dev": "latest"
+    "ava": "2.2.0",
+    "eslint-config-prettier": "6.0.0",
+    "micro-dev": "latest",
+    "prettier": "1.18.2",
+    "request": "2.88.0",
+    "request-promise": "4.2.4",
+    "test-listen": "1.1.0",
+    "xo": "0.24.0"
   }
 }
